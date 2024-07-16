@@ -62,7 +62,7 @@ namespace AnWallpaper {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AnWallpaper;V1.0.0.0;component/livewallpaper.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AnWallpaper;component/livewallpaper.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\LiveWallpaper.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -221,18 +221,18 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center">
                             <Button Style="{StaticResource NavButtonStyle}" Margin="0,0,20,0" Click="NavigateToGallery">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <materialDesign:PackIcon Kind="ViewDashboard" Foreground="White" VerticalAlignment="Center" />
-                                    <TextBlock Text="Gallery" VerticalAlignment="Center" Margin="8,0,0,0" Foreground="White"/>
+                                    <materialDesign:PackIcon x:Name="GalleryIcon" Kind="ViewDashboard" Foreground="White" VerticalAlignment="Center" />
+                                    <TextBlock x:Name="GalleryButton" Text="Gallery" VerticalAlignment="Center" Margin="8,0,0,0" Foreground="White"/>
                                 </StackPanel>
                             </Button>
                             <Button Style="{StaticResource NavButtonStyle}" Click="NavigateToUpdates">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <materialDesign:PackIcon Kind="Sync" Foreground="White" VerticalAlignment="Center" />
-                                    <TextBlock Text="Updates" VerticalAlignment="Center" Margin="4,0,0,0" Foreground="White"/>
+                                    <materialDesign:PackIcon x:Name="UpdatesIcon" Kind="Sync" Foreground="#aaa" VerticalAlignment="Center" />
+                                    <TextBlock x:Name="UpdatesButton" Text="Updates" VerticalAlignment="Center" Margin="4,0,0,0" Foreground="#aaa"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
-
+                        
                         <!-- Right section -->
                         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center">
                             <Button Style="{StaticResource IconButtonStyle}" Name="AddButton" Margin="0,0,10,0" Click="AddCard">

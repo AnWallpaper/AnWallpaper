@@ -21,7 +21,7 @@ namespace AnWallpaper
         private Utilities.systemUtils systemUtils = new Utilities.systemUtils();
         private ResourceDictionary _Resources;
         Utilities Utilities = new Utilities();
-        private string current_video_path;
+        private string current_video_path = "";
         private List<CardInfo> cardsInfo;
         private UniformGrid _CardPanel;
         private string videoPath = "";
@@ -42,7 +42,7 @@ namespace AnWallpaper
         {
             if (!File.Exists(video_path))
             {
-                MessageBox.Show($"El archivo de video no existe: {video_path}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Video file doesn't exist: {video_path}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             liveWallpaper.Show();
@@ -318,13 +318,21 @@ namespace AnWallpaper
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al guardar las tarjetas en el archivo de caché: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error saving wallpapers in cache: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void RemoveCard(Border card, string cardImg)
         {
-            if(cardImg == current_video_path)
+            string cardImgPath = cardImg.Replace("temp", "Resources");
+            cardImgPath = cardImgPath.Replace(".png", ".mp4");
+            try
+            {
+                cardImgPath = cardImgPath.Replace("/", "\u005c");
+            }
+            finally { }
+
+            if(cardImgPath == current_video_path)
             {
                 wallpaperUtils.ClearWallpaperCache();
                 liveWallpaper.Hide();

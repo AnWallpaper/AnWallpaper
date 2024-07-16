@@ -15,7 +15,7 @@ AnWallpaper is a Windows application programmed in C# that allows you to use vid
 **System Requirements:**
 - **OS:** Windows 7 or higher
 - **Memory:** 4 GB of RAM
-- **Storage:** 700 MB free space
+- **Storage:** 100 MB free space
 - **.NET Framework:** 8 or higher
 
 **Usage:**

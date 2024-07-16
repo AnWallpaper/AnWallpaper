@@ -96,14 +96,17 @@ namespace AnWallpaper
             public string GetCurrentWallpaper()
             {
                 string currentWallpaperPath = "";
-
+                
                 try
                 {
                     if (File.Exists(wallpaperCacheFile))
                     {
                         string json = File.ReadAllText(wallpaperCacheFile);
                         var wallpaperData = JsonConvert.DeserializeObject<dynamic>(json);
-                        currentWallpaperPath = wallpaperData.CurrentWallpaper;
+                        if (wallpaperData != null && json.Length > 2)
+                        {
+                            currentWallpaperPath = wallpaperData.CurrentWallpaper;
+                        }
                     }
                     else
                     {
@@ -112,7 +115,7 @@ namespace AnWallpaper
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Utils 1 "+ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
                 return currentWallpaperPath;

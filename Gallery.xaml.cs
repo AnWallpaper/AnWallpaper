@@ -18,7 +18,7 @@ namespace AnWallpaper
 
             CardManager NewcardManager = new CardManager();
             cardManager = NewcardManager;
-
+            
             cardManager.CardPanel = CardPanel;
             cardManager.Resources = Resources;
             cardManager.LoadCards();

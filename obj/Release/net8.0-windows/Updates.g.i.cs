@@ -70,7 +70,7 @@ namespace AnWallpaper {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AnWallpaper;V1.0.0.0;component/updates.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AnWallpaper;component/updates.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Updates.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

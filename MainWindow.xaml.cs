@@ -1,7 +1,8 @@
 ﻿using System.Runtime.InteropServices;
-using System.Windows;
-using System.Windows.Input;
 using System.Windows.Interop;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows;
 
 
 namespace AnWallpaper
@@ -127,10 +128,14 @@ namespace AnWallpaper
             galleryInstance = new Gallery();
             MainFrame.Navigate(galleryInstance);
         }
-        
+
         private void NavigateToGallery(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(galleryInstance);
+            GalleryIcon.Foreground = Brushes.White;
+            GalleryButton.Foreground = Brushes.White;
+            UpdatesIcon.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#aaa"));
+            UpdatesButton.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#aaa"));
         }
 
         private void AddCard(object sender, RoutedEventArgs e)
@@ -142,6 +147,10 @@ namespace AnWallpaper
         private void NavigateToUpdates(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Updates());
+            UpdatesIcon.Foreground = Brushes.White;
+            UpdatesButton.Foreground = Brushes.White;
+            GalleryIcon.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#aaa"));
+            GalleryButton.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#aaa"));
         }
 
 
